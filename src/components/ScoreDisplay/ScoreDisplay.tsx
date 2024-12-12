@@ -1,24 +1,23 @@
+// src/components/ScoreDisplay/ScoreDisplay.tsx
+ 
 import React from 'react';
 import styles from './ScoreDisplay.module.css';
-
+ 
 interface ScoreDisplayProps {
   playerScore: number;
   computerScore: number;
 }
-
+ 
 const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ playerScore, computerScore }) => {
   return (
-    <div className={styles.scoreContainer}>
-      <div className={styles.scoreBox}>
-        <h3>Player Score</h3>
-        <p>{playerScore}</p>
-      </div>
-      <div className={styles.scoreBox}>
-        <h3>Computer Score</h3>
-        <p>{computerScore}</p>
-      </div>
+    <div className={styles.scoreDisplay}>
+      <h3>Scores</h3>
+      <p>Player: {playerScore}</p>
+      <p>Computer: {computerScore}</p>
     </div>
   );
 };
-
+ 
 export default ScoreDisplay;
+ 
+ 

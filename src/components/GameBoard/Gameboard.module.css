@@ -1,0 +1,8 @@
+/* src/components/GameBoard/GameBoard.module.css */
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  

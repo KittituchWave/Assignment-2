@@ -1,7 +1,10 @@
+/* src/components/ComputerChoice/ComputerChoice.module.css */
+
 .container {
-    margin: 10px;
-    padding: 10px;
-    background-color: #f68012;
-    border-radius: 5px;
-    text-align: center;
-  }
+  margin: 10px;
+  padding: 10px;
+  background-color: #e3f2fd; /* Light blue background */
+  border-radius: 5px;
+  text-align: center;
+  width: 200px; /* Adjust as needed */
+}

@@ -6,28 +6,27 @@ import ComputerChoice from '../ComputerChoice/ComputerChoice';
 import ScoreDisplay from '../ScoreDisplay/ScoreDisplay';
 import ResultDisplay from '../ResultDisplay/ResultDisplay';
 import styles from './GameBoard.module.css';
+import { Choice, getBotChoice } from '../../utils/bot'; // Ensure correct path
 
 const GameBoard: React.FC = () => {
-  const [playerChoice, setPlayerChoice] = useState<string>('');
-  const [computerChoice, setComputerChoice] = useState<string>('');
+  const [playerChoice, setPlayerChoice] = useState<Choice | ''>('');
+  const [computerChoice, setComputerChoice] = useState<Choice | ''>('');
   const [result, setResult] = useState<string>('');
   const [playerScore, setPlayerScore] = useState<number>(0);
   const [computerScore, setComputerScore] = useState<number>(0);
 
-  const handlePlayerChoice = (choice: string) => {
+  const handlePlayerChoice = (choice: Choice) => {
     setPlayerChoice(choice);
-    generateComputerChoice();
+    const botChoice = generateComputerChoice();
+    setComputerChoice(botChoice);
+    determineResult(botChoice);
   };
 
-  const generateComputerChoice = () => {
-    const choices = ['Rock', 'Paper', 'Scissors'];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    const choice = choices[randomIndex];
-    setComputerChoice(choice);
-    determineResult(choice);
+  const generateComputerChoice = (): Choice => {
+    return getBotChoice();
   };
 
-  const determineResult = (compChoice: string) => {
+  const determineResult = (compChoice: Choice) => {
     if (playerChoice === compChoice) {
       setResult('Tie');
     } else if (

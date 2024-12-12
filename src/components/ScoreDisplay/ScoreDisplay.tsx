@@ -1,13 +1,17 @@
 // src/components/ScoreDisplay/ScoreDisplay.tsx
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> main
 import React from 'react';
 import styles from './ScoreDisplay.module.css';
-
+ 
 interface ScoreDisplayProps {
   playerScore: number;
   computerScore: number;
 }
-
+ 
 const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ playerScore, computerScore }) => {
   return (
     <div className={styles.scoreDisplay}>
@@ -17,5 +21,7 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ playerScore, computerScore 
     </div>
   );
 };
-
+ 
 export default ScoreDisplay;
+ 
+ 

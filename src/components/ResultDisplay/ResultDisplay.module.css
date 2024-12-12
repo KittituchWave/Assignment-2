@@ -1,0 +1,10 @@
+/* src/components/ResultDisplay/ResultDisplay.module.css */
+.resultDisplay {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

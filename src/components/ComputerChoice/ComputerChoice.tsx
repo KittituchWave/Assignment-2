@@ -24,3 +24,5 @@ const ComputerChoice: React.FC<ComputerChoiceProps> = ({ choice }) => {
 };
  
 export default ComputerChoice;
+
+ 

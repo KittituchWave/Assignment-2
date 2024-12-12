@@ -1,0 +1,12 @@
+/* src/components/PlayerSelection/PlayerSelection.module.css */
+ 
+.container {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffe0b2; /* Light orange background */
+    border-radius: 5px;
+    text-align: center;
+    width: 200px; /* Adjust as needed */
+  }
+  
+ 

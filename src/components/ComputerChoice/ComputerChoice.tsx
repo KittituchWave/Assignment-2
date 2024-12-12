@@ -1,26 +1,26 @@
 // src/components/ComputerChoice/ComputerChoice.tsx
-import React, { useEffect, useState } from 'react';
-import { getBotChoice, Choice } from '../../utils/bot';
+ 
+import React from 'react';
+
+import { Choice } from '../../utils/bot'; // Ensure this path is correct
+
 import styles from './ComputerChoice.module.css';
-
+ 
 interface ComputerChoiceProps {
-  setComputerChoice: (choice: Choice) => void;
+
+  choice: Choice;
+
 }
-
-const ComputerChoice: React.FC<ComputerChoiceProps> = ({ setComputerChoice }) => {
-  const [choice, setChoice] = useState<Choice>('Rock');
-
-  useEffect(() => {
-    const botChoice = getBotChoice();
-    setChoice(botChoice);
-    setComputerChoice(botChoice);
-  }, [setComputerChoice]);
+ 
+const ComputerChoice: React.FC<ComputerChoiceProps> = ({ choice }) => {
 
   return (
-    <div className={styles.container}>
-      <h3>Computer's selection: {choice}</h3>
-    </div>
-  );
-};
+<div className={styles.container}>
+<h3>Computer's Selection: {choice}</h3>
+</div>
 
+  );
+
+};
+ 
 export default ComputerChoice;

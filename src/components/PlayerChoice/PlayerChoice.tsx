@@ -1,13 +1,15 @@
 // src/components/PlayerChoice/PlayerChoice.tsx
+
 import React from 'react';
 import styles from './PlayerChoice.module.css';
+import { Choice } from '../../utils/bot'; // Adjust the path as necessary
 
 interface PlayerChoiceProps {
-  onChoiceSelect: (choice: string) => void;
+  onChoiceSelect: (choice: Choice) => void;
 }
 
 const PlayerChoice: React.FC<PlayerChoiceProps> = ({ onChoiceSelect }) => {
-  const choices = ['Rock', 'Paper', 'Scissors'];
+  const choices: Choice[] = ['Rock', 'Paper', 'Scissors'];
 
   return (
     <div className={styles.playerChoice}>

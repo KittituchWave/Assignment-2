@@ -18,7 +18,7 @@ const ComputerChoice: React.FC<ComputerChoiceProps> = ({ setComputerChoice }) =>
 
   return (
     <div className={styles.container}>
-      <h3>การเลือกของคอมพิวเตอร์: {choice}</h3>
+      <h3>Computer's selection: {choice}</h3>
     </div>
   );
 };

@@ -27,13 +27,9 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ result, message }) => {
 
   return (
     <div className={styles.resultDisplay} style={{ borderColor: resultColor }}>
-<<<<<<< HEAD
       <h3 style={{ color: resultColor }}>
         {result === 'Win' ? 'You Win!' : result === 'Lose' ? 'You Lose!' : 'Tie!'}
       </h3>
-=======
-      <h3 style={{ color: resultColor }}>{result === 'Win' ? 'You Win!' : result === 'Lose' ? 'You Lose!' : 'Tie!'}</h3>
->>>>>>> main
       <p>{message}</p>
     </div>
   );

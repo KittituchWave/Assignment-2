@@ -1,5 +1,4 @@
 /* src/components/ComputerChoice/ComputerChoice.module.css */
-<<<<<<< HEAD
 
 .container {
   margin: 10px;
@@ -9,16 +8,3 @@
   text-align: center;
   width: 200px; /* Adjust as needed */
 }
-=======
- 
-.container {
-    margin: 10px;
-    padding: 10px;
-    background-color: #e3f2fd; /* Light blue background */
-    border-radius: 5px;
-    text-align: center;
-    width: 200px; /* Adjust as needed */
-  }
-   
-   
->>>>>>> main

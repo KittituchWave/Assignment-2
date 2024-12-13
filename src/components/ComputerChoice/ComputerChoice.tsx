@@ -15,12 +15,5 @@ const ComputerChoice: React.FC<ComputerChoiceProps> = ({ choice }) => {
     </div>
   );
 };
-<<<<<<< HEAD
 
 export default ComputerChoice;
-=======
- 
-export default ComputerChoice;
- 
- 
->>>>>>> main

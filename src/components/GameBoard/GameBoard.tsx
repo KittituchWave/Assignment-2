@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import PlayerChoice from '../PlayerChoice/PlayerChoice';
 import ComputerChoice from '../ComputerChoice/ComputerChoice';
+import PlayerSelection from '../PlayerSelection/PlayerSelection';
 import ScoreDisplay from '../ScoreDisplay/ScoreDisplay';
 import ResultDisplay from '../ResultDisplay/ResultDisplay';
 import styles from './GameBoard.module.css';
-import { Choice, getBotChoice } from '../../utils/bot'; // Ensure correct path
+import { Choice, getBotChoice } from '../../utils/bot';
 
 interface GameResult {
   status: 'Win' | 'Lose' | 'Tie';
@@ -20,6 +21,10 @@ const GameBoard: React.FC = () => {
   const [playerScore, setPlayerScore] = useState<number>(0);
   const [computerScore, setComputerScore] = useState<number>(0);
 
+  /**
+   * Handles the player's choice selection.
+   * @param {Choice} choice - The player's selected choice.
+   */
   const handlePlayerChoice = (choice: Choice) => {
     setPlayerChoice(choice);
     const botChoice = generateComputerChoice();
@@ -27,15 +32,24 @@ const GameBoard: React.FC = () => {
     determineResult(choice, botChoice);
   };
 
+  /**
+   * Generates the computer's choice.
+   * @returns {Choice} - The computer's choice.
+   */
   const generateComputerChoice = (): Choice => {
     return getBotChoice();
   };
 
+  /**
+   * Determines the result of the game based on player and computer choices.
+   * @param {Choice} player - The player's choice.
+   * @param {Choice} computer - The computer's choice.
+   */
   const determineResult = (player: Choice, computer: Choice) => {
     if (player === computer) {
       setResult({
         status: 'Tie',
-        message: 'Both selected the same choice. It\'s a Tie!',
+        message: "Both selected the same choice. It's a Tie!",
       });
     } else if (
       (player === 'Rock' && computer === 'Scissors') ||
@@ -46,7 +60,7 @@ const GameBoard: React.FC = () => {
         status: 'Win',
         message: `${player} beats ${computer}. You Win!`,
       });
-      setPlayerScore(prev => prev + 1);
+      setPlayerScore((prev) => prev + 1);
     } else {
       let reason = '';
       switch (computer) {
@@ -66,10 +80,13 @@ const GameBoard: React.FC = () => {
         status: 'Lose',
         message: `${computer} beats ${player}. You Lose! (${reason})`,
       });
-      setComputerScore(prev => prev + 1);
+      setComputerScore((prev) => prev + 1);
     }
   };
 
+  /**
+   * Resets the game to its initial state.
+   */
   const resetGame = () => {
     setPlayerChoice('');
     setComputerChoice('');
@@ -82,6 +99,7 @@ const GameBoard: React.FC = () => {
     <div className={styles.gameBoard}>
       <ScoreDisplay playerScore={playerScore} computerScore={computerScore} />
       <PlayerChoice onChoiceSelect={handlePlayerChoice} />
+      {playerChoice && <PlayerSelection choice={playerChoice} />}
       {computerChoice && <ComputerChoice choice={computerChoice} />}
       {result && <ResultDisplay result={result.status} message={result.message} />}
       <button onClick={resetGame} className={styles.resetButton}>

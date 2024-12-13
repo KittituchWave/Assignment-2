@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './PlayerChoice.module.css';
-import { Choice } from '../../utils/bot'; // Adjust the path as necessary
+import { Choice } from '../../utils/bot';
 
 interface PlayerChoiceProps {
   onChoiceSelect: (choice: Choice) => void;
